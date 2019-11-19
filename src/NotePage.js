@@ -10,11 +10,7 @@ export default function NotePage(props) {
         modified={props.note.modified}
       />
       <div className='note-page-content'>
-        {props.note.content.map((para, i) => 
-          <p key={i}>
-            {para}
-          </p>
-        )}
+        <p>{props.note.content}</p>
       </div>
     </section>
   );
