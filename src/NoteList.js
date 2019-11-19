@@ -1,10 +1,10 @@
 import React from 'react';
-import NoteItem from './NoteItem;'
+import Note from './Note'
 
-function NoteList(props) {
+export default function NoteList(props) {
   const notes = props.notes.map(note => {
     return (
-      <NoteItem note={note} />
+      <Note note={note} />
     );
   });
 

@@ -6,14 +6,14 @@ import dummyStore from './dummyStore';
 import './App.css';
 
 class App extends React.Component {
-  
+  state = dummyStore;
 
   render() {
     return (
       <div className="App">
         <AppHeader />
-        <FolderList />
-        <NoteList />
+        <FolderList folders={this.state.folders}/>
+        <NoteList notes={this.state.notes}/>
       </div>
     );
   }
