@@ -1,14 +1,22 @@
 import React from 'react';
+import AppHeader from './AppHeader';
+import FolderList from './FolderList';
+import NoteList from './NoteList';
+import dummyStore from './dummyStore';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  
+
+  render() {
+    return (
+      <div className="App">
+        <AppHeader />
+        <FolderList />
+        <NoteList />
+      </div>
+    );
+  }
 }
 
 export default App;
