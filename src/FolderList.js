@@ -1,5 +1,7 @@
 import React from 'react';
-import FolderItem from './FolderItem'
+import {NavLink, Link} from 'react-router-dom';
+import AddButton from './AddButton';
+
 
 export default function FolderList(props) {
   const folders = props.folders.map(folder => {
@@ -10,7 +12,18 @@ export default function FolderList(props) {
 
   return (
     <div className="folder-list">
-      {folders}
+      <ul>
+        {props.folders.map(folder => 
+          <li key={folder.id}>
+            <NavLink 
+              className='folder-link'
+              to={`/folder/${folder.id}`}
+            >
+              <span></span>
+            </NavLink>
+          </li>
+        )}
+      </ul>
     </div>
   )
 }

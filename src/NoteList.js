@@ -40,3 +40,7 @@ export default function NoteList(props) {
     </section>
   );
 }
+
+NoteList.defaultProps = {
+  notes: []
+}
