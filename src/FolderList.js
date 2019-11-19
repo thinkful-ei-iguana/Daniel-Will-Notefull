@@ -1,18 +1,15 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import AddButton from "./AddButton";
-import { countNotes } from "../notes-helpers";
+import { countNotes } from "./notehelpers";
 
-export default function NoteListNav(props) {
+export default function FolderList(props) {
   return (
-    <div className="NoteListNav">
-      <ul className="NoteListNav__list">
+    <div className="folder-list">
+      <ul>
         {props.folders.map(folder => (
           <li key={folder.id}>
-            <NavLink
-              className="NoteListNav__folder-link"
-              to={`/folder/${folder.id}`}
-            >
+            <NavLink to={`/folder/${folder.id}`}>
               <span>{countNotes(props.notes, folder.id)}</span>
               {folder.name}
             </NavLink>
@@ -33,6 +30,6 @@ export default function NoteListNav(props) {
   );
 }
 
-NoteListNav.defaultProps = {
+FolderList.defaultProps = {
   folders: []
 };
